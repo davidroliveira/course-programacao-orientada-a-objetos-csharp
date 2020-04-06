@@ -19,9 +19,18 @@ namespace Exercicios
 
             Console.Write("Quantidade no estoque: ");
             p.Quantidade = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            
+            Console.WriteLine("Dados do produto: : " + p.ToString());
 
-            Console.WriteLine("Dados do produto: : " + p);
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionado ao estoque: ");
+            p.AdicionarProdutos(int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+            Console.WriteLine("Dados atualizados: : " + p.ToString());
 
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removido ao estoque: ");
+            p.RemoverProdutos(int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+            Console.WriteLine("Dados atualizados: : " + p.ToString());
         }
     }
 }
