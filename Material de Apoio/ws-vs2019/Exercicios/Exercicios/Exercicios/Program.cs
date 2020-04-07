@@ -5,32 +5,30 @@ namespace Exercicios
 {
     class Program
     {
+        static double Pi = 3.14;
         static void Main(string[] args)
         {
-            Produto p = new Produto();
 
-            Console.WriteLine("Entre os dados do produto: ");
+            Console.Write("Entre o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                        
+            Console.WriteLine("Circunferência: " + Circunferencia(raio).ToString("F2", CultureInfo.InvariantCulture));
 
-            Console.Write("Nome: ");
-            p.Nome = Console.ReadLine();
+            Console.WriteLine("Volume: " + Volume(raio).ToString("F2", CultureInfo.InvariantCulture));
 
-            Console.Write("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Valor de PI: " + Pi.ToString("F2", CultureInfo.InvariantCulture));
 
-            Console.Write("Quantidade no estoque: ");
-            p.Quantidade = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            
-            Console.WriteLine("Dados do produto: : " + p.ToString());
-
-            Console.WriteLine();
-            Console.Write("Digite o número de produtos a ser adicionado ao estoque: ");
-            p.AdicionarProdutos(int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
-            Console.WriteLine("Dados atualizados: : " + p.ToString());
-
-            Console.WriteLine();
-            Console.Write("Digite o número de produtos a ser removido ao estoque: ");
-            p.RemoverProdutos(int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
-            Console.WriteLine("Dados atualizados: : " + p.ToString());
         }
+
+        static double Circunferencia(double raio)
+        {
+            return 2.0 * Pi * raio;
+        }
+
+        static double Volume(double raio)
+        {
+            return 4.0 / 3.0 * Pi * Math.Pow(raio, 3);
+        }
+
     }
 }
