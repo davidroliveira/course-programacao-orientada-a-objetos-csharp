@@ -18,17 +18,24 @@ namespace Exercicios
 
             Produto p2 = new Produto();
 
+            Produto p3 = new Produto
+            {
+                Nome = "TV",
+                Preco = 500.00,
+                Quantidade = 20
+            };
+
             Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
-            
+
             Console.WriteLine();
             Console.Write("Digite o número de produtos a ser adicionado ao estoque: ");
             int qte = int.Parse(Console.ReadLine());
             p.AdicionarProdutos(qte);
-            
+
             Console.WriteLine();
             Console.WriteLine("Dados atualizados: " + p);
-            
+
             Console.WriteLine();
             Console.Write("Digite o número de produtos a ser removido do estoque: ");
             qte = int.Parse(Console.ReadLine());
