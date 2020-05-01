@@ -7,13 +7,15 @@ namespace Exercicios
     {
         static void Main(string[] args)
         {
-            Produto p = new Produto("TV", 500.00, 10);
+            Point p;
+            p.X = 10;
+            p.Y = 20;
+            Console.WriteLine(p);
 
-            p.Nome = "T";
+            p = new Point();
 
-            Console.WriteLine(p.Nome);
-            Console.WriteLine(p.Preco);
-            Console.WriteLine(p.Quantidade);
+            Console.WriteLine(p);
+
         }
 
     }
