@@ -7,30 +7,25 @@ namespace Exercicios
     {
         static void Main(string[] args)
         {
-            double? x = null;
-            double? y = 10.0;
+            int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(x.GetValueOrDefault());
-            Console.WriteLine(y.GetValueOrDefault());
+            double[] vect = new double[n];
 
-            Console.WriteLine(x.HasValue);
-            Console.WriteLine(y.HasValue);
+            for (int i = 0; i < n; i++)
+            {
+                vect[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            }
 
-            if (x.HasValue)
-                Console.WriteLine(x.Value);
-            else
-                Console.WriteLine("x is null");
+            double sum = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += vect[i];
+            }
 
-            if (y.HasValue)
-                Console.WriteLine(y.Value);
-            else
-                Console.WriteLine("y is null");
+            double avg = sum / n;
 
-            double a = x ?? 5;
-            double b = y ?? 5;
+            Console.WriteLine("AVERAGE HEIGHT = " + avg.ToString("F2", CultureInfo.InvariantCulture));
 
-            Console.WriteLine(a);
-            Console.WriteLine(b);
         }
 
     }
