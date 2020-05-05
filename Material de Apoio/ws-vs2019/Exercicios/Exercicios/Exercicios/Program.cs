@@ -7,25 +7,40 @@ namespace Exercicios
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            const int quantidadeQuartosTotal = 10;
+            Quarto[] quartos = new Quarto[quantidadeQuartosTotal];
 
-            Produto[] produtos = new Produto[n];
-
-            for (int i = 0; i < n; i++)
+            Console.Write("Quantos quartos serão alugados? ");
+            int quantidadeQuartosAlugados = int.Parse(Console.ReadLine());
+           
+            for (int i = 0; i < quantidadeQuartosAlugados; i++)
             {
-                produtos[i] = new Produto();
-                produtos[i].Nome = Console.ReadLine();
-                produtos[i].Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine();
+                Console.WriteLine("Aluguel #" + (i + 1));
+
+                Quarto quarto = new Quarto();
+
+                Console.Write("Nome: ");
+                quarto.Nome = Console.ReadLine();
+
+                Console.Write("Email: ");
+                quarto.Email = Console.ReadLine();
+
+                Console.Write("Quarto: ");
+                int numero = int.Parse(Console.ReadLine());
+
+                quartos[numero] = quarto;
             }
 
-            double sum = 0.0;
-            for (int i = 0; i < n; i++)
+            Console.WriteLine();
+            Console.WriteLine("Quartos ocupados:");
+            for (int i = 0; i < quantidadeQuartosTotal; i++)
             {
-                sum += produtos[i].Preco;
+                if (quartos[i] != null)
+                {
+                    Console.WriteLine(i + ": " + quartos[i].Nome + ", " + quartos[i].Email);
+                }
             }
-
-            double avg = sum / n;
-            Console.WriteLine("AVERAGE HEIGHT = " + avg.ToString("F2", CultureInfo.InvariantCulture));
 
         }
 

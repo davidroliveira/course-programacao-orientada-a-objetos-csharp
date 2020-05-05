@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Exercicios
 {
-    class Produto
+    class Quarto
     {
         public string Nome { get; set; }
-        public double Preco { get; set; }
+        public string Email { get; set; }
     }
 }
